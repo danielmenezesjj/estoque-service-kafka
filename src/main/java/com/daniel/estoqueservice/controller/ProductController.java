@@ -1,14 +1,12 @@
-package com.kipper.estoqueservice.controller;
+package com.daniel.estoqueservice.controller;
 
 
-import com.kipper.estoqueservice.dto.ProductDTO;
-import com.kipper.estoqueservice.model.ProductEstoque;
-import com.kipper.estoqueservice.service.EstoqueListener;
+import com.daniel.estoqueservice.dto.ProductDTO;
+import com.daniel.estoqueservice.service.EstoqueListener;
+import com.daniel.estoqueservice.model.ProductEstoque;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -34,7 +32,7 @@ public class ProductController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity putProduct(@PathVariable Integer id ,@RequestBody ProductDTO dto){
+    public ResponseEntity putProduct(@PathVariable String id ,@RequestBody ProductDTO dto){
         service.update(id, dto);
         return ResponseEntity.ok().build();
 

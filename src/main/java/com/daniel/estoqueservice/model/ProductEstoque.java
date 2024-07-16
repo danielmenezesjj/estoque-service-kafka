@@ -1,25 +1,26 @@
-package com.kipper.estoqueservice.model;
+package com.daniel.estoqueservice.model;
 
 
-import com.kipper.estoqueservice.dto.ProductDTO;
+import com.daniel.estoqueservice.dto.ProductDTO;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Entity(name = "estoque-product")
+@Entity(name = "Productestoque")
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 public class ProductEstoque {
 
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.UUID)
     @Id
-    private Integer id;
+    private String id;
     private String productName;
     private Integer quantity;
 

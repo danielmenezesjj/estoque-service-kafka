@@ -1,4 +1,4 @@
-package com.kipper.estoqueservice.dto;
+package com.daniel.estoqueservice.dto;
 
 public record ProductDTO(String productName, Integer quantity) {
 }
